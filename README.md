@@ -79,41 +79,58 @@ Post-augmentation, the dataset grew to **12,342 images**, representing 10 diagno
 
 ---
 
-## Installation and Usage
+## Installation
 
-1. **Clone the Repository**
+1. **Clone the Repository**  
    ```bash
    git clone https://github.com/username/rop-diagnosis.git
    cd rop-diagnosis
    ```
 
-2. **Install Dependencies**
-   Install the required Python libraries using:
+2. **Install Dependencies**  
+   Ensure you have Python 3.8 or higher installed. Install the required Python packages by running:  
    ```bash
-   pip install -r requirements.txt
+   pip install tensorflow keras matplotlib scikit-learn
    ```
 
-3. **Dataset Preparation**
-   - Download the dataset from [Kaggle](https://www.kaggle.com/datasets/jananowakova/retinal-image-dataset-of-infants-and-rop/data).
-   - Place the dataset in the `data/` directory.
-
-4. **Training**
-   Run the training script:
+3. **Additional Dependencies**  
+   If data augmentation is required, install the following:  
    ```bash
-   python train.py
+   pip install pillow
    ```
 
-5. **Evaluation**
-   Evaluate the trained model on the test dataset:
-   ```bash
-   python evaluate.py
-   ```
+4. **Dataset Setup**  
+   - Download the dataset from [Kaggle](https://www.kaggle.com/datasets/jananowakova/retinal-image-dataset-of-infants-and-rop/data).  
+   - Place the dataset in the `data/` directory or the path specified in the notebook.
 
-6. **Results**
-   Visualize the model's performance:
-   ```bash
-   python visualize_results.py
-   ```
+---
+
+## Usage
+
+1. **Run Data Augmentation (Optional)**  
+   To generate augmented data for imbalanced classes, execute the augmentation code in the notebook:
+   - Modify `dataset_path` and `augmented_path` in the script.
+   - Run the cell to create augmented images.
+
+2. **Train the Model**  
+   - Execute the training cells in the notebook.
+   - Models implemented include CNN, ResNet, EfficientNet, and more.
+   - Modify hyperparameters such as epochs, batch size, or model type as needed.
+
+3. **Evaluate the Model**  
+   - Run the evaluation cells to compute test accuracy and loss.
+   - Results include confusion matrices and performance plots.
+
+4. **Save the Model**  
+   - Save the trained model using:  
+     ```python
+     model.save('model_name.h5')
+     ```
+   - Training history can also be saved as a JSON file.
+
+5. **Visualize Results**  
+   - Use the included scripts to plot training/validation accuracy and loss.
+   - Generate and display confusion matrices.
 
 ---
 
@@ -143,7 +160,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Authors
 
-- **Ahsan Siddiqui** - [GitHub](https://github.com/ahsansiddiqui)
+- **Ahsan Siddiqui** - [GitHub](https://github.com/ahsan-sidd)
 - **Muhammad Mansoor Alam**
 - **Zohaib Aslam**
 
